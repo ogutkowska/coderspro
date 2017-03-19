@@ -1,5 +1,10 @@
-//lieraly wyrazen regularnych
+//dostep do wlasciwosci/kluczy
 
-var numbers = /\d+/g;
+var array = [];
 
-var numbers2 = new RegExp('\\d+'', 'g');
+array.push(2345566); //dodawanie do tablicy
+
+array['push'] (546353) //inny zapis
+
+var method = 'push'; // rzadko spotykane
+array[method] (5433);
