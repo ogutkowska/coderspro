@@ -26,3 +26,6 @@ logNameAll.call(this, 'person2'); // person2: Michelle w callu przekazujesz jede
 logNameAll.apply (this, ['global']); //global Michelle w apply przezkazujesz tablice parametroe
 logNameAll.apply(person1['person1']); // person1: peter
 logNameAll.apply(person2['person1']); // person2:michel
+
+/tworze funkcje powiazana z obiektem person1
+var logNameAll 
