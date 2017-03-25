@@ -1,23 +1,23 @@
-//wykrywanie wlasciwosci
+//usuwanie wlasciwosci z obiektu klasa rozni sie od obiektu tym ze obiekt jest instancja klasy
+var animal = {
+  gender: 'female'
 
-if (person.age) {
-  //
 }
 
-var car = {
-  manufacturer: 'Ford'
-};
+console.log(animal.gender); //'female'
 
-console.log('manufacturer' in car); // true
+// pierwszy sposob delete
 
-//warunek if zwroci false gdy bedzie rowne: null, undefined, 0, false, NaN(not a number), ' '
+delete animal.gender;
+console.log(animal.gender)// undefined
 
-var person = {
-    name: 'Maciej'
-}
+// drugi sposob to przypisanie wartosci null
 
-console.info(person.hasOwnProperty('name')); // true
+animal.gender = 'female';
+console.log(animal.gender);//female
 
+animal.gender=null
 
-console.log('toString' in person);
-console.log(person.hasOwnProperty('toString'))
+//nie dziala - wlasciwosc ma wartosc null i mozna ja wykryc przez uzycie hasown property
+
+console.log(animal.gender;// undefined
