@@ -21,7 +21,7 @@ Object.defineProperty(person, 'name', {
 //Object ma metode seal - zapieczetowanie
 
 //Objects.seal()
-//extensible i configurable ustawia na false
+//extensible ustawia na false
 
 function({
   "use strict";
@@ -43,3 +43,24 @@ function({
 
 person.name = 'abcd';
 console.log(person.name) // 'person' bo obiekt jest zapieczetowany
+
+
+//object freeze(); po dodaniu metody nie mozna usuwac ani dodawac wlasciwosci i nie mozna jej zmieniac
+
+(function(){
+  "use strict";
+  var person = {
+    name: 'Konrad'
+  };
+  console.log(Object.isExtensible(person)); //true
+  console.log(Object.isFrozen(person));//true
+  person.sayGoodbye = function ( {
+    console.log("Say goodbye", this.name)
+
+  };
+  console.log('sayGoodbye' in person); // false
+
+person.name = 'Piotr';
+console.log(person.name); // "Konrad" - obiekt jest zamrozony i nie mozna go nadpisac
+
+})();
