@@ -1,49 +1,52 @@
-// Konstruktory i prototypy
-
-function Computer() {
-
-}
-// new zwraca wartosc
-var computer1 = new Computer;
-var computer2 = new Computer;
-
-console.log(computer1.constructor == Computer); // true
-
-
+/*//definiowanie metody w prototypie
 function Person(name) {
-
   this.name = name;
-  this.sayHello = function (){
-    console.log('abscd');
-  };
 }
 
-var person1 = new Person ('Piotr');
-var person2 = new Person('Konrad');
+Person.prototype.sayHello = function (name) {
+  console.log('Helo %s!', this.name)
+};
 
-console.log(person1.name); //'Piotr'
+var person1 = new Person('Ula');
+var person2 = new Person ('Maria');
 
+console.log(person1.name, person2.name);
 
-//new - referencja do this - kontekst instancji i to ze zwraca
+person1.sayHello();
+person2.sayHello();
+*/
+
+//
+
+(function() {
+  function Person(name) {
+    this.name = name;
+  }
+
+  Person.prototype.arr Person = [];
+
+  var person1 = new Person ('Ula');
+  var person2 = new Person ('Martia');
+
+  person1.arrPerson.push('czerwony');
+  person2.arrPerson.push('niebieski');
+
+  console.log(person1.arrPerson); // ['czerwony', 'niebieski']
+  console.log(person2.arrPerson); // ['czerwony', 'niebieski']
+})();
+//definiowanie wielu metod naraz w prototypie
+Person.prototype = {
+  sayHello:function () {
+    // asasdhdhkdh
+  };
+  toString: function (){
+    //
+  }
+})();
+
+//
 
 (function() {
   "use strict";
-
-  function Car(name) {
-    Objects.defineProperty(this, 'name' ,
-      get: function(){
-        return name;
-      },
-      set: function(value) {
-        name = value;
-      }
-    });
-
-this.brrrum = function () {
-  console.log("Bruuuuuummmm");
+  
 }
-  }
-  var car1 = new Car('Szybki');
-car1.brrrum(); // 'Bruuuuuuuum'
-
-})();
