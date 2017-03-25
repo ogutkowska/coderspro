@@ -1,15 +1,23 @@
-// wyliczenia
+// setter i getter
 
-var obj = {
-  string: 'abc',
+//js wszystkie zmienne z podkreslnikiem sa postrzegane jako prywatne
+//get  musi zwrocic wartosc
+var person = {
+
+  _name: 'Marcin',
+  get name() {
+  console.log("Hello" %s, this._name);
+// w stringu mozna dodac %s i jako kolejny argument zmienną
+  console.log('Hello ${this._name}');
+  return this._name;
+},
+//musi dostac argument
+set name(value) {
+  console.log('Zmiana wartosci %s', value);
+  this._name = value;
+}
 };
 
-for(var property in obj){
-
-console.log(property); // wylistuje nazwe wlasciwosci
-console.log(obj)[prop]; // wylistuje wartosc wlasciwosci
-}
-//proto nie bedzie wylistowane poniewaz [[Enumerable]] jest ustawione na false
-console.log(Object.keys(obj));
-
-console.log(property.propertyIsEnumerable('__proto__');
+console.log(person.name);
+person.name = 'Zosia';
+console.log(person.name);
