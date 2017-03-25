@@ -1,23 +1,29 @@
-// setter i getter
+// atrybuty wspolne
 
-//js wszystkie zmienne z podkreslnikiem sa postrzegane jako prywatne
-//get  musi zwrocic wartosc
+//[[Enumerable]], [[Configurable]]
+
+//do zmiany tych wlasciwosci uzywamy metody Object.defineProperty()
+
 var person = {
-
-  _name: 'Marcin',
-  get name() {
-  console.log("Hello" %s, this._name);
-// w stringu mozna dodac %s i jako kolejny argument zmienną
-  console.log('Hello ${this._name}');
-  return this._name;
-},
-//musi dostac argument
-set name(value) {
-  console.log('Zmiana wartosci %s', value);
-  this._name = value;
-}
+  name: 'Ula'
 };
+console.log(person.propertyIsEnumerable('name'));//true
+Object.defineProperty(person, 'name', {
+  configurable: false
+}); // nie mozna zmienic i odczytac tej wlasciwosci wiec to co na dole nie zadziala
 
-console.log(person.name);
-person.name = 'Zosia';
-console.log(person.name);
+Object.defineProperty(person, 'name', {
+  enumerable: false
+});
+
+console.log(person.propertyIsEnumerable('name'));//false
+
+
+(function(){
+  "use strict";
+
+  var person = {
+    name: 'Ula'
+  };
+
+})() //funkcja wywoluje sie automatycznie nie trzeba jej samemu wywolywac
