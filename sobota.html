@@ -1,0 +1,23 @@
+//wykrywanie wlasciwosci
+
+if (person.age) {
+  //
+}
+
+var car = {
+  manufacturer: 'Ford'
+};
+
+console.log('manufacturer' in car); // true
+
+//warunek if zwroci false gdy bedzie rowne: null, undefined, 0, false, NaN(not a number), ' '
+
+var person = {
+    name: 'Maciej'
+}
+
+console.info(person.hasOwnProperty('name')); // true
+
+
+console.log('toString' in person);
+console.log(person.hasOwnProperty('toString'))
