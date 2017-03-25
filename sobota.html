@@ -1,23 +1,15 @@
-//usuwanie wlasciwosci z obiektu klasa rozni sie od obiektu tym ze obiekt jest instancja klasy
-var animal = {
-  gender: 'female'
+// wyliczenia
 
+var obj = {
+  string: 'abc',
+};
+
+for(var property in obj){
+
+console.log(property); // wylistuje nazwe wlasciwosci
+console.log(obj)[prop]; // wylistuje wartosc wlasciwosci
 }
+//proto nie bedzie wylistowane poniewaz [[Enumerable]] jest ustawione na false
+console.log(Object.keys(obj));
 
-console.log(animal.gender); //'female'
-
-// pierwszy sposob delete
-
-delete animal.gender;
-console.log(animal.gender)// undefined
-
-// drugi sposob to przypisanie wartosci null
-
-animal.gender = 'female';
-console.log(animal.gender);//female
-
-animal.gender=null
-
-//nie dziala - wlasciwosc ma wartosc null i mozna ja wykryc przez uzycie hasown property
-
-console.log(animal.gender;// undefined
+console.log(property.propertyIsEnumerable('__proto__');
