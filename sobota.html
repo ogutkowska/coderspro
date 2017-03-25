@@ -1,52 +1,20 @@
-/*//definiowanie metody w prototypie
-function Person(name) {
-  this.name = name;
-}
-
-Person.prototype.sayHello = function (name) {
-  console.log('Helo %s!', this.name)
-};
-
-var person1 = new Person('Ula');
-var person2 = new Person ('Maria');
-
-console.log(person1.name, person2.name);
-
-person1.sayHello();
-person2.sayHello();
-*/
-
-//
-
-(function() {
+function() {
   function Person(name) {
     this.name = name;
   }
 
-  Person.prototype.arr Person = [];
+var person1 = new Person ('Zosia');
+var person2 = new pERSON('Tosia');
 
-  var person1 = new Person ('Ula');
-  var person2 = new Person ('Martia');
+Object.freeze(person1);
 
-  person1.arrPerson.push('czerwony');
-  person2.arrPerson.push('niebieski');
+Person.prototype.sayHi = function() {
+  console.log('Hi');
+};
 
-  console.log(person1.arrPerson); // ['czerwony', 'niebieski']
-  console.log(person2.arrPerson); // ['czerwony', 'niebieski']
+person1.sayHi() // 'Hi' / operacja na metodach a nie wlasciwosciach klasy
+person2.sayHi() // 'Hi'
+/kiedy operujemy na własciwosciach klasy
+person1.name = "hdhdjdj"; //nie zadziala
+person2.name = "nahdhdu";//zadziala
 })();
-//definiowanie wielu metod naraz w prototypie
-Person.prototype = {
-  sayHello:function () {
-    // asasdhdhkdh
-  };
-  toString: function (){
-    //
-  }
-})();
-
-//
-
-(function() {
-  "use strict";
-  
-}
