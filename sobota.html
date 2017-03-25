@@ -1,20 +1,17 @@
-function() {
-  function Person(name) {
-    this.name = name;
-  }
+//dodawanie powtarzajacych sie w tablicy liczb
 
-var person1 = new Person ('Zosia');
-var person2 = new pERSON('Tosia');
 
-Object.freeze(person1);
+var arr = [9, 9, 111, 2, 3, 4, 4, 5, 7];
+var sorted_arr = arr.slice().sort();
 
-Person.prototype.sayHi = function() {
-  console.log('Hi');
-};
+var results = [];
+for (var i = 0; i < arr.length - 1; i++) {
+    if (sorted_arr[i + 1] == sorted_arr[i]) {
+        results.push(sorted_arr[i]);
+    }
+}
 
-person1.sayHi() // 'Hi' / operacja na metodach a nie wlasciwosciach klasy
-person2.sayHi() // 'Hi'
-/kiedy operujemy na własciwosciach klasy
-person1.name = "hdhdjdj"; //nie zadziala
-person2.name = "nahdhdu";//zadziala
-})();
+console.log(results);
+
+var sum = results.reduce((a, b) => a + b, 0);
+console.log(sum);
